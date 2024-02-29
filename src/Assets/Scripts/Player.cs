@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
             var direction = new Vector3(horizontalMovement, 0, 0);
             gameObject.transform.Translate(direction);
         //} 
-        if(Input.GetButtonDown("Jump")){
+        if(Input.GetButtonDown("Jump") && (body.velocity.y < 2 && body.position.y < 1.5)){
             body.AddForce(Vector2.up * JumpSpeed, ForceMode2D.Impulse);
         }
     }
